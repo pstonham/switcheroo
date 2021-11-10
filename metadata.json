@@ -1,0 +1,8 @@
+{
+  "name": "Switcheroo",
+  "description": "Switch to the first window with the title x",
+  "uuid": "p.stonham+switcheroo@gmail.com",
+  "shell-version": [
+    "41"
+  ]
+}

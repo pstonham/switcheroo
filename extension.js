@@ -38,7 +38,10 @@ class Extension {
     }
 
     disable() {
-        if (this._dbusImpl) this._dbusImpl.unexport();
+        if (this._dbusImpl) {
+            this._dbusImpl.unexport();
+            this._dbusImpl = null;
+        }
     }
 
     Set(name) {

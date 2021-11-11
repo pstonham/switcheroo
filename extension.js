@@ -32,12 +32,8 @@ const SwitcherooIface = `
 </node>`;
 
 class Extension {
-    constructor() {
-        this._dbusImpl =
-            Gio.DBusExportedObject.wrapJSObject(SwitcherooIface, this);
-    }
-
     enable() {
+        this._dbusImpl = Gio.DBusExportedObject.wrapJSObject(SwitcherooIface, this);
         this._dbusImpl.export(Gio.DBus.session, '/org/switcheroo/Switcheroo');
     }
 

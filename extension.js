@@ -17,6 +17,7 @@
  */
 
 /* exported init */
+import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 
 const Gio = imports.gi.Gio;
 
@@ -31,7 +32,7 @@ const SwitcherooIface = `
     </interface>
 </node>`;
 
-class Extension {
+export default class Switcheroo extends Extension {
     enable() {
         this._dbusImpl = Gio.DBusExportedObject.wrapJSObject(SwitcherooIface, this);
         this._dbusImpl.export(Gio.DBus.session, '/org/switcheroo/Switcheroo');
@@ -62,6 +63,3 @@ class Extension {
     }
 }
 
-function init() {
-    return new Extension();
-}
